@@ -20,7 +20,7 @@ public class PRO38 {
             System.out.println("Select 1. Push");
             System.out.println("Select 2. POP");
             System.out.println("Select 3. Display");
-            System.out.println("Select 4. Peep");
+            System.out.println("Select 4. Peek");
             System.out.println("Select 5. Peep");
             System.out.println("Select 6. Chnage");
             System.out.println("Select 7. Exit");
@@ -29,12 +29,12 @@ public class PRO38 {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter value to push");
+                    System.out.print("Enter value to push ::");
                     int val = sc.nextInt();
                     stack.push(val);
                     break;
                 case 2:
-                    stack.pop();
+                    System.out.println(stack.pop() + "poped.");
                     break;
                 case 3:
                     stack.display();
@@ -94,13 +94,13 @@ class Stack {
         }
     }
 
-    public void pop() {
+    public int pop() {
         // check underflow condition
         if (isEmpty()) {
             System.out.println("stack underflow.");
+            return -1;
         } else {
-            System.out.println(stack[top] + " Poped.");
-            top--;
+            return stack[top--];
         }
     }
 
