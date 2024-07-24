@@ -1,6 +1,4 @@
-// 69. Write a program to remove the duplicates nodes from given sorted Linked List. 
-//  Input: 1 → 1 → 6 → 13 → 13 → 13 → 27 → 27 
-//  Output: 1 → 6 → 13 → 27
+// 62. WAP to remove duplicate elements from a singly linked list. 
 
 import java.util.HashSet;
 
@@ -23,7 +21,6 @@ public class PRO62 {
 
         ll.DisplayList();
     }
-
 }
 
 class Node {
