@@ -27,60 +27,69 @@ public class PRO50 {
 class ArrayQueue {
     int front, rear;
     int size;
-    int[] arr;
+    int[] queue;
 
     ArrayQueue(int size) {
         front = rear = -1;
         this.size = size;
-        arr = new int[size];
+        queue = new int[size];
+    }
+
+    // check if QUEUE isFull
+    public boolean isFull() {
+        return rear == size - 1;
+    }
+
+    // check if Queue ifEmpty
+    public boolean isEmpty() {
+        return front == -1 || front > rear;
     }
 
     // Enqueue operation
-    public void enqueue(int val) {
-        if (rear == size - 1) {
+    public void enqueue(int element) {
+        if (isFull()) {
             System.out.println("Queue is Full.");
             return;
         }
 
+        // move front pointer for first insertion
         if (front == -1) {
-            front = rear = 0;
-            arr[0] = val;
-        } else {
-            arr[rear + 1] = val;
-            rear++;
+            front = 0;
         }
-        size++;
+
+        // increment rear and set element
+        queue[++rear] = element;
+        System.out.println(element + " enqueued.");
     }
 
     // Dequeue operation
-    public int dequeue() {
-        if (size == 0) {
+    public void dequeue() {
+        if (isEmpty()) {
             System.out.println("Queue is Empty.");
-            return -1;
+            return;
         }
 
-        int temp = arr[front];
+        System.out.println(queue[front] + " dequeued.");
         front++;
-        size--;
-        return temp;
     }
 
-    public int peek() {
-        if (size == 0) {
+    public void peek() {
+        if (isEmpty()) {
             System.out.println("Queue is Empty.");
-            return -1;
+            return;
         }
-        return arr[front];
+
+        System.out.println(queue[front] + " At Peek.");
     }
 
     // Display Queue
     public void display() {
-        if (size == 0) {
+        if (isEmpty()) {
             System.out.println("Queue is Empty.");
             return;
         } else {
             for (int i = front; i <= rear; i++) {
-                System.out.print(arr[i] + " ");
+                System.out.print(queue[i] + " ");
             }
             System.out.println();
         }
