@@ -42,26 +42,38 @@ class CircularQueue {
         arr = new int[capacity];
     }
 
+    // check if Queue isFull
+    public boolean isFull() {
+        return size == arr.length;
+    }
+
+    // check if Queue isEmpty
+    public boolean isEmpty() {
+        return size == 0 || front == -1;
+    }
+
     // Insert
-    public void insert(int val) {
-        if (size == 0) {
-            front = rear = 0;
-            arr[0] = val;
-        } else if (size == arr.length) {
+    public void insert(int element) {
+        if (isFull()) {
             System.out.println("Queue is Full!");
             return;
+        }
+
+        if (isEmpty()) {
+            front = rear = 0;
+            arr[0] = element;
         } else if (rear < arr.length - 1) {
-            arr[++rear] = val;
+            arr[++rear] = element;
         } else if (rear == arr.length - 1) {
             rear = 0;
-            arr[0] = val;
+            arr[0] = element;
         }
         size++;
     }
 
     // Delete
     public int delete() {
-        if (size == 0) {
+        if (isEmpty()) {
             System.out.println("Queue is Empty!");
             return -1;
         } else {
