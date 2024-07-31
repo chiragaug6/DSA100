@@ -13,30 +13,10 @@ public class PRO58 {
         ll.insertAtFront(30);
         ll.insertAtFront(20);
 
-        System.out.println(ll.countNodes());
-    }
-}
-
-class Node {
-    int data;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
-
-class LinkedList {
-    Node head;
-
-    public void insertAtFront(int data) {
-        Node temp = new Node(data);
-        temp.next = head;
-        head = temp;
+        System.out.println(countNodes(ll.head));
     }
 
-    public int countNodes() {
+    static int countNodes(Node head) {
         if (head == null) {
             return 0;
         }
