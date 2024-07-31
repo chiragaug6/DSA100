@@ -35,47 +35,47 @@ public class PRO59 {
     }
 }
 
-class Node {
-    int data;
-    Node next;
+// class Node {
+// int data;
+// Node next;
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
+// Node(int data) {
+// this.data = data;
+// this.next = null;
+// }
+// }
 
-class LinkedList {
-    Node head;
+// class LinkedList {
+// Node head;
 
-    public void insertAtEnd(int data) {
-        Node newNode = new Node(data);
+// public void insertAtEnd(int data) {
+// Node newNode = new Node(data);
 
-        if (head == null) {
-            head = newNode;
-        } else {
-            Node current = head;
+// if (head == null) {
+// head = newNode;
+// } else {
+// Node current = head;
 
-            while (current.next != null) {
-                current = current.next;
-            }
+// while (current.next != null) {
+// current = current.next;
+// }
 
-            current.next = newNode;
-        }
-    }
+// current.next = newNode;
+// }
+// }
 
-    public void DisplayList() {
-        if (head == null) {
-            System.out.println("List is Empty.");
-            return;
-        }
+// public void DisplayList() {
+// if (head == null) {
+// System.out.println("List is Empty.");
+// return;
+// }
 
-        Node current = head;
+// Node current = head;
 
-        while (current != null) {
-            System.out.print(current.data + "-->");
-            current = current.next;
-        }
-        System.out.println("null");
-    }
-}
+// while (current != null) {
+// System.out.print(current.data + "-->");
+// current = current.next;
+// }
+// System.out.println("null");
+// }
+// }
