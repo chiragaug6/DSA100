@@ -17,7 +17,6 @@ public class PRO40 {
 
         System.out.println(checkFormate("aaabbbb"));
         System.out.println(checkFormate("aaa"));
-
     }
 
     static boolean checkFormate(String s) {
@@ -28,7 +27,7 @@ public class PRO40 {
             if (c == 'a') {
                 stack.push(c);
             } else if (c == 'b') {
-                if (stack.isEmpty() || stack.pop() != 'a') {
+                if (stack.isEmpty() || stack.pop() == 'b') {
                     return false;
                 }
             } else {
